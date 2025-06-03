@@ -105,6 +105,16 @@ To simulate power loss:
 
 ## 📸 Glorious Build
 
+### 🔋 Dead Canary in Hand
+![Dead Canary in Hand](20250603_155956.jpg)
+
+### 🧱 Mounted to Power Strip (VHB-taped, not on UPS)
+![Dead Canary Mounted](20250603_170120.jpg)
+
+### 🧪 Fake Shutdown Test Confirmed
+![Canary Log Output](image%20(1).jpg)
+
+
 
 
 
