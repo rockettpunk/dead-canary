@@ -100,11 +100,10 @@ To simulate power loss:
 - No cloud dependencies
 - Local, autonomous, and extremely reliable
 
-**10/10 would let this glowing bird shut down my NAS again.**
 
 ---
 
-## Glorious Build
+## Build
 
 ### Dead Canary in Hand
 ![Dead Canary in Hand](20250603_155956.jpg)
