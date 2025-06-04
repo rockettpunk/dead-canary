@@ -13,7 +13,7 @@ An ESP32 sits on the same power strip as the NAS (but **not** on the UPS), and s
 
 ---
 
-## 🧰 What You Need
+## What You Need
 
 - ESP32 development board
 - Arduino IDE
@@ -23,7 +23,7 @@ An ESP32 sits on the same power strip as the NAS (but **not** on the UPS), and s
 
 ---
 
-## 📦 How It Works
+## How It Works
 
 ### ESP32 Firmware
 - Connects to Wi-Fi
@@ -40,7 +40,7 @@ An ESP32 sits on the same power strip as the NAS (but **not** on the UPS), and s
 
 
 
-## 🔌 Installation
+## Installation
 
 ### 1. Flash the ESP32 with `canary-esp32.ino`
 
@@ -86,14 +86,14 @@ To simulate power loss:
 
 ---
 
-## 🎁 Bonus Layer
+## Bonus Layer
 
 - I used [Uptime Kuma](https://github.com/louislam/uptime-kuma) to monitor the Canary IP.
 - If the MU/TH/UR is still up but Kuma alerts me, I know the ESP has been unplugged (likely by Arnold the cat).
 
 ---
 
-## 🛡️ Final Notes
+## Final Notes
 
 - ESP32 must **not** be powered by the UPS
 - No cloud dependencies
@@ -103,15 +103,15 @@ To simulate power loss:
 
 ---
 
-## 📸 Glorious Build
+## Glorious Build
 
-### 🔋 Dead Canary in Hand
+### Dead Canary in Hand
 ![Dead Canary in Hand](20250603_155956.jpg)
 
-### 🧱 Mounted to Power Strip (VHB-taped, not on UPS)
+### Mounted to Power Strip (VHB-taped, not on UPS)
 ![Dead Canary Mounted](20250603_170120.jpg)
 
-### 🧪 Fake Shutdown Test Confirmed
+### Fake Shutdown Test Confirmed
 ![Canary Log Output](image%20(1).jpg)
 
 
