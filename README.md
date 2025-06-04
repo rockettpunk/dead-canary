@@ -11,6 +11,7 @@ My Zimacube NAS (MU/TH/UR) runs on a basic UPS without NUT or similar. I wanted 
 Enter: **Dead Canary**  
 An ESP32 sits on the same power strip as the NAS (but **not** on the UPS), and serves a local `/` endpoint returning `"CHIRP"`. When that chirp goes silent, the NAS knows it’s time to go dark.
 
+NOW WITH TIMESTAMPS IN THE LOG
 ---
 
 ## What You Need
