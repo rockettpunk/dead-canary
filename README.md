@@ -115,6 +115,9 @@ To simulate power loss:
 ### Fake Shutdown Test Confirmed
 ![Canary Log Output](image%20(1).jpg)
 
+### Updated Log output
+![Canary Log Output update](Updated_Log.png)
+
 
 
 
