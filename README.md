@@ -4,7 +4,7 @@ A LAN-connected watchdog using an ESP32 that safely shuts down your NAS or serve
 
 ---
 
-## 🔧 What is it?
+## What is it?
 
 My Zimacube NAS (MU/TH/UR) runs on a basic UPS without NUT or similar. I wanted a reliable, local-only way to detect when the **power goes out** — and shut things down cleanly before ZFS could cry.
 
