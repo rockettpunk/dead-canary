@@ -1,29 +1,34 @@
 #!/bin/bash
 
-CANARY_IP="YOUR_CANARY_IP"  # Pick an IP for your canary, must be on the same subnet as the server you are planning to shut down
-THRESHOLD_MINUTES=5        # Minutes to tolerate silence before shutting down
-STATUS_FILE="/tmp/canary.lastseen"  # Where we record last successful CHIRP time
+CANARY_IP="YOUR_CANARY_IP"               # IP of the ESP32 Canary
+THRESHOLD_MINUTES=5                     # Minutes of silence before shutdown
+STATUS_FILE="/dev/shm/canary.lastseen" # RAM-based file for last chirp timestamp
 
-# Function to check if canary responds with CHIRP
-ping_canary() {
-  curl -sf "http://$CANARY_IP/" | grep -q "CHIRP"  # silent + fail-fast, look for "CHIRP"
+# Timestamped logger
+log() {
+  echo "$(date '+%Y-%m-%d %H:%M:%S') - $1"
 }
 
-now_ts=$(date +%s)  # current Unix timestamp
+# Check if the canary responds with any HTTP 200 OK
+ping_canary() {
+  curl -sf -o - "http://$CANARY_IP/" > /dev/null
+  # Or: ping -c1 "$CANARY_IP" &>/dev/null  # Swap if using ICMP
+}
 
-# Check for chirp
+now_ts=$EPOCHSECONDS  # Get current time (bash builtin)
+
 if ping_canary; then
-  echo "$now_ts" > "$STATUS_FILE"                  # save timestamp of last chirp
-  echo "✅ Canary chirped."                         # optional: log for debugging
+  echo "$now_ts" > "$STATUS_FILE"
+  log "✅ Canary chirped."
 else
-  last_seen=$(cat "$STATUS_FILE" 2>/dev/null || echo 0)  # read last timestamp or fallback to 0
-  elapsed=$(( (now_ts - last_seen) / 60 ))               # time since last chirp, in minutes
+  last_seen=0
+  [ -s "$STATUS_FILE" ] && last_seen=$(<"$STATUS_FILE")
+  elapsed=$(( (now_ts - last_seen) / 60 ))
 
-  echo "⚠️ No chirp in $elapsed minutes."
+  log "⚠️ No chirp in $elapsed minutes."
 
-  # If silence exceeds threshold, shut it all down
   if [ "$elapsed" -ge "$THRESHOLD_MINUTES" ]; then
-    echo "💀 Canary is dead. Shutting down MU/TH/UR."
+    log "💀 Canary is dead. Shutting down MU/TH/UR."
     shutdown -h now
   fi
 fi
