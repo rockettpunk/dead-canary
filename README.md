@@ -20,7 +20,7 @@ NOW WITH TIMESTAMPS IN THE LOG
 - Arduino IDE
 - A Linux server or NAS
 - Local Wi-Fi
-- (Optional) Glorious plastic pot for housing
+- (Optional) Hipster film cannister for housing
 
 ---
 
