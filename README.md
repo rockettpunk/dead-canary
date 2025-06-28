@@ -2,6 +2,7 @@
 
 A LAN-connected watchdog using an ESP32 that safely shuts down your NAS or server when power is lost — like a literal canary in a server mine.
 
+UPDATED TO INCLUDE SCREEN AND WIFI FALLBACKS
 ---
 
 ## What is it?
