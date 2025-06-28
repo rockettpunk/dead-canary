@@ -7,7 +7,7 @@ UPDATED TO INCLUDE SCREEN AND WIFI FALLBACKS
 
 ## What is it?
 
-My Zimacube NAS (MU/TH/UR) runs on a basic UPS without NUT or similar. I wanted a reliable, local-only way to detect when the **power goes out** — and shut things down cleanly before ZFS could cry.
+My Zimacube Pro server (MU/TH/UR) runs on a basic UPS without NUT or similar connectivity. I wanted a reliable, local-only way to detect when the **power goes out** — and shut things down cleanly before ZFS could cry.
 
 Enter: **Dead Canary**  
 An ESP32 sits on the same power strip as the NAS (but **not** on the UPS), and serves a local `/` endpoint returning `"CHIRP"`. When that chirp goes silent, the NAS knows it’s time to go dark.
